@@ -15,6 +15,18 @@ public class PhoneCleanerRegex {
       }
 
       // TODO:напишите ваш код тут, результат вывести в консоль.
+      String regex = "[^0-9]";
+      input = input.replaceAll(regex, "");
+
+      if (input.length() == 10) {
+        System.out.println("7" + input);
+      } else if (input.length() > 11 || input.length() < 10) {
+        System.out.println("Неверный формат номера");
+      } else if (input.length() == 11 && input.charAt(0) != '7' && input.charAt(0) != '8') {
+        System.out.println("Неверный формат номера");
+      } else if(input.length() == 11) {
+        System.out.println(input.replaceAll("8", "7"));
+      }
     }
   }
 
